@@ -7,10 +7,9 @@ static int hello_init(void)
 	return 0;
 }
 
-static int hello_exit(void)
+static void hello_exit(void)
 {
 	printk("hello_exit");
-	return 0;
 }
 
 module_init(hello_init);
