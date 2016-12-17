@@ -1,0 +1,9 @@
+<node>
+  <interface name="net.Corp.Sample.Calc">
+    <method name="Add">
+      <arg name="firstno" direction="in" type="i"/>
+      <arg name="secondno" direction="in" type="i"/>
+      <arg name="result" direction="out" type="i"/>
+    </method>
+  </interface>
+</node>

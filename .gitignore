@@ -31,3 +31,7 @@
 # Debug files
 *.dSYM/
 *.su
+
+#dbus generated files
+*-generated.h
+*-generated.c
