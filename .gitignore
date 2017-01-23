@@ -1,3 +1,7 @@
+#project specific
+.cproject
+.project
+tags
 # Object files
 *.o
 *.ko

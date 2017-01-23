@@ -1,7 +1,8 @@
 CROSS=gcc
-PKGCONFIG=`pkg-config --cflags dbus-1 dbus-glib-1 glib-2.0 gio-unix-2.0 --libs glib-2.0 dbus-1 dbus-glib-1`
+PKGCFGLS=`pkg-config --cflags glib-2.0 gio-unix-2.0`
+PKGLIBS=`pkg-config --libs glib-2.0`
 all:	codegen
-	$(CROSS) $(PKGCONFIG) server.c calc-generated.c -lglib-2.0 -o server
+	$(CROSS) -I/usr/include/dbus-1.0 -I/usr/lib/i386-linux-gnu/dbus-1.0/include -I/usr/include/glib-2.0 -I/usr/lib/i386-linux-gnu/glib-2.0/include -ldbus-glib-1 -ldbus-1 -lgobject-2.0 -lglib-2.0 server.c calc-generated.c -o server
 codegen:
 	gdbus-codegen --generate-c-code	calc-generated ../server.xml
 clean:
